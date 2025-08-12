@@ -1,0 +1,30 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js
+.next
+out
+.nextcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Env
+.env
+.env*.local
+
+# Prisma
+prisma/dev.db*
+prisma/*.db-journal
+
+# Playwright
+playwright-report
+playwright/.cache
+
+# Misc
+.DS_Store
+*.swp
