@@ -1,0 +1,96 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #151b22;
+  --text: #f5f7fa;
+  --muted: #9aa4b2;
+  --accent: #4f8cff;
+  --operator: #1f2a38;
+  --action: #2a3544;
+  --equals: #2f7bff;
+  --shadow: rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+
+.calculator {
+  min-width: 320px;
+  max-width: 420px;
+  margin: 24px auto;
+  padding: 16px;
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.display {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 4px;
+  padding: 16px 12px;
+  border-radius: 12px;
+  background: #0f141b;
+}
+
+.previous {
+  color: var(--muted);
+  min-height: 20px;
+  font-size: 0.9rem;
+}
+
+.current {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  text-align: right;
+  word-break: break-all;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 64px;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  background: #1a2230;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #0c1117;
+  transition: transform 0.02s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #0c1117;
+}
+
+.btn.operator { background: var(--operator); }
+.btn.action { background: var(--action); }
+.btn.equals { background: var(--equals); }
+
+.span-two { grid-column: span 2; }
+
+@media (min-width: 640px) {
+  .calculator { max-width: 520px; }
+  .grid { grid-auto-rows: 72px; }
+  .current { font-size: 2.6rem; }
+}
